@@ -1,0 +1,35 @@
+---
+const imageAlt = "José Andrés Martínez Hernández"
+import SocialPills from "./SocialPills.astro";
+import Badge from "./Badge.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Mail from "./icons/Mail.astro";
+import GitHub from "./icons/GitHub.astro";
+
+---
+    <article class="grid max-w-xl">
+        <div class="flex gap-4 mb-2">
+            <img src="https://i.pinimg.com/736x/fd/ed/6f/fded6fcd0c89da7df4e9d40177283fc7.jpg" class="rounded-full shadow-lg size-16" alt={imageAlt}>
+            <a href="https://www.linkedin.com/in/andresmh99/" target="_blank" rel="noopener" class="flex items-center transition md:justify-center md:hover:scale-105">
+                <Badge>Disponible para trabajar</Badge>
+            </a>
+        </div>
+        <div>
+            <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">Hey, I am Andrés</h1>
+            <p class="mt-6 text-white py-3 text-xl">Soy una persona comprometida con la innovación y el aprendizaje continuo. Busco optimizar procesos diarios con soluciones creativas y efectivas. Mi pasión por la tecnología me mantiene al día con las últimas tendencias, permitiéndome ofrecer soluciones de alta calidad. Estoy preparado para contribuir al éxito de tu proyecto con habilidades técnicas y un fuerte compromiso con la excelencia.</p>
+        </div>
+        <div class="flex flex-wrap gap-4 mt-4">
+            <SocialPills href="mailto:andresjose.210299@gmail.com">
+                <Mail class="size-4"/>
+                Correo eléctronico
+            </SocialPills>
+            <SocialPills href="https://www.linkedin.com/in/andresmh99/">
+                <LinkedIn class="size-4"/>
+                LinkedIn
+            </SocialPills>
+            <SocialPills href="https://github.com/andresmh99">
+                <GitHub class="size-4"/>
+                GitHub
+            </SocialPills>
+        </div>
+    </article>

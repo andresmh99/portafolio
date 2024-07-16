@@ -1,9 +1,12 @@
 ---
-import AboutMe from '../components/AboutMe.astro';
+import HeroSection from '../components/HeroSection.astro';
 import Layout from '../layouts/Layout.astro';
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout title="Portafolio Andrés Martínez - Desarrollador full stack 3 años de experiencia">
-	<AboutMe></AboutMe>
+	<SectionContainer class="py-16 md:py-36">
+		<HeroSection/>
+	</SectionContainer>	
 </Layout>
 
