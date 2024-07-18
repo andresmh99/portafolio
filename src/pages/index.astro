@@ -2,11 +2,22 @@
 import HeroSection from '../components/HeroSection.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionContainer from "../components/SectionContainer.astro";
+import Experience from '../components/Experience.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
 ---
 
 <Layout title="Portafolio Andrés Martínez - Desarrollador full stack 3 años de experiencia">
 	<SectionContainer class="py-16 md:py-36">
 		<HeroSection/>
+	</SectionContainer>	
+	<SectionContainer class="py-16 md:py-36">
+		<h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+		<Experience/>
 	</SectionContainer>	
 </Layout>
 

@@ -1,0 +1,40 @@
+---
+import type { IExperience } from "../interfaces/expercience"
+import ExperienceItem from "./ExperienceItem.astro";
+
+const experiences: IExperience[] = [
+  {
+    date: "Febrero 2024 - Actualidad",
+    title: "Front Desk Agent",
+    company: "Assetplan - Gensa Inmobiliaria",
+    description:
+      "Encargado del Front Desk en una propiedad Multifamily, donde combino habilidades administrativas y operativas para asegurar un entorno seguro y funcional. Gracias a mis competencias técnicas en informática, he desarrollado herramientas que optimizan los procesos diarios. Durante el tiempo en el cargo, he reforzado mis habilidades en atención al cliente, gestión administrativa y coordinación de actividades operativas.",
+    link: "",
+  },
+  {
+    date: "Octubre 2022 – Abril 2023",
+    title: "Frontend Developer & Community Manager",
+    company: "LoopBond SpA",
+    description:
+      "En LoopBond, me enfoqué en crear contenido visual atractivo y administrar la presencia de la marca, incluyendo diseño gráfico, estrategias de contenido en redes sociales, el uso de herramientas de diseño gráfico como Adobe Creative Suite, y el análisis constante de métricas para mejorar la participación del público y la presencia en línea de la marca.",
+    link: "",
+  },
+  {
+    date: "Febrero 2021 – Enero 2022",
+    title: "Soporte Técnico y Desarrollo",
+    company: "La Linarense",
+    description:
+      "En La Linarense, me destaqué en la administración de páginas web en WordPress, brindando soporte técnico con HTML, CSS y JavaScript, integrando APIs externas mediante Node.js en el backend y conectándolas eficientemente a bases de datos como MongoDB y PostgreSQL. Colaboré estrechamente con equipos multidisciplinarios para el éxito de proyectos web y el cumplimiento de objetivos.",
+    link: "",
+  },
+];
+---
+<ol class="relative mt-16">
+  {
+    experiences.map((experience) => (
+      <li>
+        <ExperienceItem {...experience}/>
+      </li>
+    ))
+  }
+</ol>
