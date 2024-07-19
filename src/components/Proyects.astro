@@ -1,0 +1,40 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import type {  ITags } from "../interfaces/proyects"
+import Angular from "./icons/Angular.astro"
+import ProyectsItem from "./ProyectsItem.astro"
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-black text-white",
+    icon: Angular,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+}
+
+const PROJECTS = [
+  {
+    title: "Calculadora AssetPlan - Calculos inmobiliarios",
+    description: "Herramienta para calcular salvoconductos, términos anticipados, pagos de cuentas pendientes y montos de agua caliente vinculados a la UF.",
+    link: "https://calculos-assetplan.vercel.app/",
+    gitHub: "https://github.com/andresmh99/calculosAssetplan",
+    image: "https://res.cloudinary.com/dkwb24r3o/image/upload/v1721349923/Portafolio/95shots_so_l7bmie.png",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+    {
+        PROJECTS.map((proyect) => (
+            <ProyectsItem {...proyect}/>
+        ))
+    }
+</div>
