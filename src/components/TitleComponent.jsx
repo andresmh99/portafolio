@@ -25,7 +25,7 @@ const TitleComponent = () => {
       className="w-max flex text-4xl sm:text-5xl tracking-tight font-bold"
       aria-label={`Current title: ${titles[index]}`}
     >
-      <span className="mr-2">Hey,</span>
+      <span className="mr-3">Hey,</span>
       <span
         className={`pr-5 bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent font-bold ${
           animationActive ? 'animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white' : ''
