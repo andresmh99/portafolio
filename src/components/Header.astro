@@ -1,29 +1,100 @@
 ---
-
+const navItems = [
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:andresjose.210299@gmail.com",
+  },
+]
 ---
-<header class="max-w-xl m-auto my-3 ">
-    <nav class="p-1 md:p-3 rounded-full mx-2 bg-slate-800" >
-        <ul class="flex justify-center gap-2 md:gap-4">
-            <li class="text-center p-1 md:text-lg text-sm text-white hover:text-cyan-400 border-b border-b-transparent hover:border-cyan-400">
-                <a href="#experiencia">
-                    Experiencia
-                </a>
-            </li>
-            <li class="text-center p-1 md:text-lg text-sm text-white hover:text-cyan-400 border-b border-b-transparent hover:border-cyan-400">
-                <a href="#sobre-mi">
-                    Sobre mí
-                </a>
-            </li>
-            <li class="text-center p-1 md:text-lg text-sm text-white hover:text-cyan-400 border-b border-b-transparent hover:border-cyan-400">
-                <a href="#proyectos">
-                    Proyectos
-                </a>
-            </li>
-            <li class="text-center p-1 md:text-lg text-sm text-white hover:text-cyan-400 border-b border-b-transparent hover:border-cyan-400">
-                <a href="mailto:andresjose.210299@gmail.com">
-                    Contacto
-                </a>
-            </li>
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+    <nav class=" rounded-full mx-2 bg-slate-800" >
+        <ul class="flex justify-center gap-2 md:gap-4 mx-2 py-0.5">
+            {
+                navItems.map((link) => (
+                  <li
+                    class="text-center p-1.5 md:px-2 md:text-lg text-xs text-white hover:bg-slate-300 hover:rounded-full hover:scale-125  hover:text-gray-950 transition-all"   
+                  >
+                    <a 
+                        aria-label={link.label} 
+                        href={link.url}
+                    >
+                        {link.title}
+                    </a>
+                  </li>
+                ))
+              }       
         </ul>
     </nav>
 </header>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+      const sections = document.querySelectorAll("section")
+      const navItems = document.querySelectorAll("header nav ul li a")
+  
+      const callback = (entries: any[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navItems.forEach((item) => {
+              if (item.getAttribute("aria-label") == entry.target.id) {
+                item.classList.add("text-yellow-500")
+              } else {
+                item.classList.remove("text-yellow-500")
+              }
+            })
+          }
+        })
+      }
+  
+      const observer = new IntersectionObserver(callback, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      })
+  
+      sections.forEach((section) => {
+        observer.observe(section)
+      })
+  
+      // Cleanup function
+      document.onvisibilitychange = () => {
+        if (document.visibilityState === "hidden") {
+          observer.disconnect()
+        } else {
+          sections.forEach((section) => {
+            observer.observe(section)
+          })
+        }
+      }
+    })
+  </script>
+  
+  <style>
+    nav {
+      animation: nav-shadown 1s linear both;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+    }
+  
+    @keyframes nav-shadown {
+      to {
+        @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      }
+    }
+  </style>
