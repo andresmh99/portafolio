@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "./ThemeToggle..astro"
+
 const navItems = [
   {
     title: "Experiencia",
@@ -23,19 +25,21 @@ const navItems = [
 ]
 ---
 <header class="flex items-center justify-center w-full">
-    <nav class="fixed top-2 z-10 rounded-full mx-2 bg-slate-800" >
+    <nav class="fixed top-2 z-10 rounded-full mx-2 bg-slate-300 dark:bg-slate-800" >
         <div class="flex justify-center gap-2 md:gap-4 mx-2 py-0.5">
             {
                 navItems.map((link) => (
-                    <a class="text-center p-1.5 md:px-2 md:text-lg text-xs text-white hover:bg-slate-300 hover:rounded-full hover:scale-125 hover:text-gray-950 transition-all"
+                    <a class="text-center p-1.5 md:px-2 md:text-lg text-xs text-slate-800 hover:bg-slate-800 hover:text-slate-200 dark:text-white dark:hover:bg-slate-300 hover:rounded-full hover:scale-125 dark:hover:text-gray-950 transition-all"
                         aria-label={link.label} 
                         href={link.url}
                     >
                         {link.title}
                     </a>
                 ))
-              }       
+              } 
+              <ThemeToggle />                 
         </div>
+         
     </nav>
 </header>
 
