@@ -5,7 +5,7 @@ import Badge from "./Badge.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import Mail from "./icons/Mail.astro";
 import GitHub from "./icons/GitHub.astro";
-import TitleComponent from "./TitleComponent";
+import ReactTitleComponent from "./ReactTitleComponent";
 
 ---
     <article class="grid max-w-xl">
@@ -16,7 +16,7 @@ import TitleComponent from "./TitleComponent";
             </a>
         </div>
         <div>
-            <TitleComponent client:visible/>
+            <ReactTitleComponent client:visible/>
             <p class="mt-6 py-3 text-xl text-slate-800 dark:text-gray-200 text-pretty dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold">+3 años de experiencia. <strong>Técnico en Análisis de Sistemas y futuro Ing. Informático</strong> ubicado en Santiago de Chile. Mi enfoque en la innovación y el aprendizaje continuo me permite ofrecer soluciones creativas y efectivas.</p>
         </div>
         <div class="flex flex-wrap gap-4 mt-4">
